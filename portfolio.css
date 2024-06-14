@@ -106,7 +106,6 @@ a:hover{
     height: 60%;
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
 }
 .dark-mode {
     background-color: black;
@@ -125,7 +124,8 @@ button {
 }
 
 .mine
-{
+{   
+    width: 50%;
     margin: 5%;
 }
 .mine a{
@@ -170,7 +170,7 @@ span{
 .content1 img{
     margin-right: 10%;
     height: 100%;
-    width: 80%;
+    width: 100%;
     clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
 filter: brightness(25%);
 
@@ -351,6 +351,10 @@ dd{
             }
             .content1{
                 display: block;
+                
+            }
+            .mine{
+                width:90%;
             }
             .content1 h3{
                 width: 100px;
