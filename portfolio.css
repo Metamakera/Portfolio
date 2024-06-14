@@ -410,6 +410,10 @@ dd{
             }
             #more{
                 transform: translateY(250px);
+                }
+                footer{
+                    
+                    transform: translateY(250px);
             }
             footer img{
                 height: 25px;
