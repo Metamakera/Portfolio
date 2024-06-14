@@ -409,7 +409,7 @@ dd{
                 list-style-image:url("liststyle2.png") ;
             }
             #more{
-                margin-top: 50%;
+                transform:translateY(250px);
             }
             footer img{
                 height: 25px;
