@@ -411,7 +411,7 @@ dd{
                 list-style-image:url("liststyle2.png") ;
             }
             #more{
-                transform: translateY(250px);
+                margin-top: 70%;
                 }
                 footer{
                     
