@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Foldit&family=Great+Vibes&family=Hedvig+Letters+Serif:opsz@12..24&family=Jost&family=Lobster&family=Pixelify+Sans&family=Poppins:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Foldit&family=Great+Vibes&family=Hedvig+Letters+Serif:opsz@12..24&family=Jaini+Purva&family=Jost&family=Lobster&family=Pixelify+Sans&family=Poppins:wght@400;500&display=swap');
+        body {
+            font-family: Arial, sans-serif;
+            background-image: radial-gradient( circle 1292px at -13.6% 51.7%,  rgba(0,56,68,1) 0%, rgba(163,217,185,1) 51.5%, rgba(255,252,247,1) 88.6% );
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #bmiForm{
+            accent-color: rgb(0, 0, 0);
+        }
+        .container {
+            background-image: linear-gradient( 135deg, #92FFC0 10%, #002661 100%);
+             padding: 30px;
+            border-radius: 10px;
+            border-top-left-radius: 50%;
+            position: relative;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .container::before{
+            position: absolute;
+            content: "";
+            height: 50%;
+            width: 60%;
+            background-color: black;
+            z-index: -1;
+            left: 2px;
+            top: 2px;
+            
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .result {
+            margin-top: 20px;
+        }
+        button{
+            position: relative;
+            padding: 10px;
+            border-radius: 12px;
+            border: none;
+            font-weight: 700;
+            border-bottom: 5px solid #002661;
+        }
+       button:hover{
+        background-color: transparent;
+        outline: 2px solid blue;
+        color: white;
+       }
+       span{
+  font-family: "Great Vibes", cursive;
+  font-weight: 800;
+  font-style: normal;
+  color: rgb(255, 240, 240);
+
+}
+h1{
+  font-family: "Pixelify Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: rgb(47, 46, 46);
+  text-shadow: 10px 8px 10px black;
+}
+#age{
+    border-radius:5px;
+    border: transparent;
+    outline: 1px solid black;
+   
+}
+#age:hover{
+    border-left: 3px solid blue;
+}
+#age:focus{
+    border-left: 3px solid blue;
+}
+#height{
+    border-radius:5px;
+    border: transparent;
+    outline: 1px solid black;
+   
+}
+#height:hover{
+    border-left: 3px solid blue;
+}
+#height:focus{
+    border-left: 3px solid blue;
+}
+#weight{
+    border-radius:5px;
+    border: transparent;
+    outline: 1px solid black;
+   
+}
+#weight:hover{
+    border-left: 3px solid blue;
+}
+#weight:focus{
+    border-left: 3px solid blue;
+}
+#gender{
+    padding: 5px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    outline: 1px solid ;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><span>B</span>MI Calculator</h1>
+        <form id="bmiForm">
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input type="number" id="age" name="age" required>
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="height">Height (cm)</label>
+                <input type="number" id="height" name="height" required>
+            </div>
+            <div class="form-group">
+                <label for="weight">Weight (kg)</label>
+                <input type="number" id="weight" name="weight" required>
+            </div>
+            <button type="button" onclick="calculateBMI()">Calculate BMI</button>
+        </form>
+        <div class="result" id="result"></div>
+    </div>
+    <script>
+        function calculateBMI() {
+            // Get the input values
+            const age = document.getElementById('age').value;
+            const gender = document.getElementById('gender').value;
+            const height = document.getElementById('height').value;
+            const weight = document.getElementById('weight').value;
+
+            // Calculate BMI
+            const heightInMeters = height / 100;
+            const bmi = weight / (heightInMeters * heightInMeters);
+
+            // Display the result
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = `<p style="font-size:20px;color:white;padding:12px;padding-left:20px;border-top-left-radius:30px;border-bottom-right-radius:25px;box-shadow:5px 10px 20px black">Your BMI is ${bmi.toFixed(2)}</p>`;
+        }
+    </script>
+</body>
+</html>
