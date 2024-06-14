@@ -377,6 +377,7 @@ dd{
            }
             #myworks .prj1 iframe{
                 height: 50%;
+                border-radius: 15px;
             }
             #myworks .prj1,.prj2{
                 display: block;
@@ -393,6 +394,7 @@ dd{
             .prj2 iframe{
                   height: 30%;
                   width: 100%;
+                  border-radius: 15px;
             }
             .prj1 .desc1 h2{
                 font-size: 20px;
