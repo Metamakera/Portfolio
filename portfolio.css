@@ -415,7 +415,7 @@ dd{
                 }
                 footer{
                     
-                    transform: translateY(250px);
+                    margin-top: 70%;
             }
             footer img{
                 height: 25px;
